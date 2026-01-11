@@ -4,3 +4,4 @@ project(untitled C)
 set(CMAKE_C_STANDARD 23)
 
 add_executable(getpwnam getpwnam.c)
+add_executable(child-parent child-parent.c)
