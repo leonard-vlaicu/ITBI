@@ -25,6 +25,7 @@ void signalChild(int sig) {
     flag = 1;
 }
 
+
 int main() {
     signal(SIGUSR1, signalParent);
     signal(SIGCHLD, signalParent);
@@ -53,7 +54,7 @@ int main() {
         int status;
         wait(&status);
 
-        const int totalSignalCount = WEXITSTATUS(status);               // numarul total de semnale trimis de catre exit este uneori diferit fata de ce numaralerii
+        const int totalSignalCount = WEXITSTATUS(status);               // numarul total de semnale trimis de catre exit este uneori diferit fata de ce numara handlerii
         printf("Parent: Received %d. (Sent: %d)\n", parentCount, totalSignalCount);
     }
 
